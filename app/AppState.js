@@ -1,4 +1,5 @@
 import Car from "./Models/Car.js"
+import Job from "./Models/Job.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
@@ -24,6 +25,15 @@ class AppState extends EventEmitter {
     })
   ]
 
+  jobs = [
+    new Job({
+      title: 'Programmer',
+      description: 'Looking for a Junior Full Stack Web Developer who is easy to exploit.',
+      pay: 19.00,
+      payType: 'hourly',
+      location: '123 Business Street',
+    })
+  ]
 }
 
 
