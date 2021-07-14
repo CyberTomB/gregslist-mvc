@@ -1,4 +1,4 @@
-import { ProxyState } from "../AppState";
+import { ProxyState } from "../AppState.js";
 import Job from "../Models/Job.js"
 
 class JobsService {
