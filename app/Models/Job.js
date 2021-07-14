@@ -2,7 +2,7 @@ export default class Job {
    constructor({ title, description, pay, payType, location }) {
       this.title = title
       this.description = description
-      this.pay = pay
+      this.pay = pay.toLocaleString("en-US")
       this.payType = payType
       this.location = location
    }
