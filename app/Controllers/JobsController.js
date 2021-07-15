@@ -21,7 +21,7 @@ export default class JobsController {
       let rawJob = {
          title: form.title.value,
          description: form.description.value,
-         pay: form.pay.value,
+         pay: parseInt(form.pay.value),
          payType: form.payType.value,
          location: form.location.value
       }

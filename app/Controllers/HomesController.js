@@ -21,10 +21,10 @@ export default class HomesController {
       let rawHome = {
          bedrooms: form.bedrooms.value,
          bathrooms: form.bathrooms.value,
-         sqft: form.sqft.value,
-         price: form.price.value,
+         sqft: parseInt(form.sqft.value),
+         price: parseInt(form.price.value),
          description: form.description.value,
-         imgUrl: form.imgUrl.value,
+         imgUrl: form.imgUrl.value || 'https://via.placeholder.com/200',
          location: form.location.value,
       }
       homesService.createHome(rawHome)

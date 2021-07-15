@@ -2,7 +2,7 @@ export default class Home {
    constructor({ bedrooms, bathrooms, sqft, price, imgUrl, description, location }) {
       this.bedrooms = bedrooms
       this.bathrooms = bathrooms
-      this.sqft = sqft
+      this.sqft = sqft.toLocaleString("en-US")
       this.price = price.toLocaleString("en-US")
       this.imgUrl = imgUrl
       this.description = description

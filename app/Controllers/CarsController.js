@@ -26,7 +26,7 @@ export default class CarsController {
       make: form.make.value,
       model: form.model.value,
       year: form.year.value,
-      price: form.price.value,
+      price: parseInt(form.price.value),
       description: form.description.value,
       imgUrl: form.imgUrl.value
     }
