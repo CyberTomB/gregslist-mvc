@@ -28,4 +28,12 @@ export default class JobsController {
       jobsService.createJob(rawJob)
       form.reset()
    }
+
+   deleteJob(id) {
+      console.log('you are trying to delete job: ', id)
+      try { jobsService.deleteJob(id) }
+      catch (error) {
+         console.log("the delete didn't work:", error)
+      }
+   }
 }

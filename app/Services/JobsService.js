@@ -22,6 +22,16 @@ class JobsService {
          console.error(error)
       }
    }
+
+   async deleteJob(id) {
+      try {
+         const res = await api.delete('jobs/' + id)
+         console.log(res.data)
+         ProxyState.jobs = ProxyState.jobs.filter(j => j.id != id)
+      } catch (error) {
+         console.error("Network problem: ", error)
+      }
+   }
 }
 
 export const jobsService = new JobsService()
