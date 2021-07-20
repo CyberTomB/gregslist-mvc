@@ -1,4 +1,5 @@
 import { generateId } from "../Utils/GenerateId.js"
+import Form from "./Form.js"
 
 export default class Home {
    constructor({ bedrooms, bathrooms, levels, price, imgUrl, year, id = generateId() }) {
@@ -23,6 +24,9 @@ export default class Home {
               <p class="small">Year: ${this.year}</p>
               <p>A nice home for your family. :)</p>
               <p><em>$${this.price}</em></p>
+              <div>
+              <button class="btn btn-danger btn-block" onclick="app.homesController.deleteHome('${this.id}')">DELETE</button>
+              </div>
             </div>
          </div>
       </div>

@@ -8,8 +8,9 @@ class CarsService {
   constructor() {
     this.getAllCars()
   }
-  createCar(rawCar) {
-    debugger
+  async createCar(rawCar) {
+    const res = await api.post('cars', rawCar)
+    console.log('car created:', res.data)
     ProxyState.cars = [...ProxyState.cars, new Car(rawCar)]
   }
 
@@ -20,6 +21,16 @@ class CarsService {
       ProxyState.cars = res.data.map(c => new Car(c))
     } catch (error) {
       console.error(error)
+    }
+  }
+
+  async deleteCar(id) {
+    try {
+      const res = await api.delete('cars/' + id)
+      console.log(res.data)
+      ProxyState.cars = ProxyState.cars.filter(c => c.id != id)
+    } catch (error) {
+      console.error("something's wrong with the network", error)
     }
   }
 }

@@ -32,4 +32,13 @@ export default class CarsController {
     carsService.createCar(rawCar)
     form.reset()
   }
+
+  deleteCar(id) {
+    console.log('you are trying to delete car: ', id)
+    try { carsService.deleteCar(id) }
+    catch (error) {
+      console.log("the delete didn't work", error)
+    }
+
+  }
 }

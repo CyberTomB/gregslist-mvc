@@ -29,4 +29,12 @@ export default class HomesController {
       homesService.createHome(rawHome)
       form.reset()
    }
+
+   deleteHome(id) {
+      console.log('you are trying to delete home: ', id)
+      try { homesService.deleteHome(id) }
+      catch (error) {
+         console.log("delete didn't work: ", error)
+      }
+   }
 }

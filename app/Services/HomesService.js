@@ -22,6 +22,16 @@ class HomesService {
          console.error(error)
       }
    }
+
+   async deleteHome(id) {
+      try {
+         const res = await api.delete('houses/' + id)
+         console.log(res.data)
+         ProxyState.homes = ProxyState.homes.filter(h => h.id != id)
+      } catch (error) {
+         console.error("Network problem:", error)
+      }
+   }
 }
 
 export const homesService = new HomesService()
