@@ -19,11 +19,11 @@ export default class JobsController {
       event.preventDefault()
       let form = event.target
       let rawJob = {
-         title: form.title.value,
+         jobTitle: form.title.value,
          description: form.description.value,
-         pay: parseInt(form.pay.value),
-         payType: form.payType.value,
-         location: form.location.value
+         rate: parseInt(form.pay.value),
+         hours: form.payType.value,
+         company: form.company.value
       }
       jobsService.createJob(rawJob)
       form.reset()

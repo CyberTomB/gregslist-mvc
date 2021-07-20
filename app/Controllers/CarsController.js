@@ -13,7 +13,6 @@ export default class CarsController {
   constructor() {
     // When 'cars' changes in the State run the _draw method
     ProxyState.on('cars', _draw)
-    ProxyState.on('cars', () => { console.log('new car') })
 
     // This only runs when the app first loads because data is already in the state
     _draw()

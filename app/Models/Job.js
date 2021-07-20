@@ -1,10 +1,10 @@
 export default class Job {
-   constructor({ title, description, pay, payType, location }) {
-      this.title = title
+   constructor({ company, jobTitle, hours, rate = 7.25, description }) {
+      this.title = jobTitle
       this.description = description
-      this.pay = pay.toLocaleString("en-US", { style: "currency", currency: "USD" })
-      this.payType = payType
-      this.location = location
+      this.pay = rate.toLocaleString("en-US", { style: "currency", currency: "USD" })
+      this.hours = hours
+      this.company = company
    }
 
    get Template() {
@@ -15,9 +15,9 @@ export default class Job {
                <div class="text-center">
                   <p><b>${this.title}</b><p>
                </div>
-               <p class="small">${this.location}</p>
+               <p class="small">${this.company}</p>
                <p>${this.description}</p>
-               <p><em>${this.pay} ${this.payType}</em></p>
+               <p><em>${this.pay} per hour, ${this.hours} hours a week</em></p>
             </div>
          </div>
       </div>
